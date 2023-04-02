@@ -1,5 +1,7 @@
+import Index from "./hooks/useReducer";
+
 const App = () => {
-  return <div>App</div>;
+  return <Index />;
 };
 
 export default App;

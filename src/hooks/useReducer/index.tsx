@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import { useReducer } from "react";
 import { reducer } from "./reducer";
 
 const Index = () => {
@@ -18,6 +18,10 @@ const Index = () => {
     dispatch({ type: "TOOGLE" });
   };
 
+  const handleInputValue = (e: any) => {
+    dispatch({ type: "INPUT-VALUE", value: e.target.value });
+  };
+
   const handleBoth = () => {
     handleIncrement();
     handleShowText();
@@ -28,9 +32,10 @@ const Index = () => {
       <p>{state.count}</p>
 
       <div className="btn">
-        <button onClick={handleBoth} type="button">
+        {/* <button onClick={handleBoth} type="button">
           INCREMENT
-        </button>
+        </button> */}
+        <input onChange={(e) => handleInputValue(e)} />
       </div>
 
       {state.showText && <div>Show Text</div>}
